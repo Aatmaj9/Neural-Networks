@@ -151,16 +151,5 @@ K is the number of classes.
 
 **Working of softmax**
 
-Step 1: Raw Logits (Pre-Softmax Outputs)
-
-Consider the output from the last layer of the neural network, which consists of logits. These logits are unbounded real numbers and represent the raw predictions for each class.
-
-Let’s assume we are working on a classification task with K classes. The neural network provides an output vector 
-z = {z1.....zK] , where each z(i) is the logit corresponding to the i th class.
-
-Step 2: Applying the Softmax Function
-
-The Softmax function transforms these logits into probabilities. The formula for Softmax for each class i is:
-
 ### 2. Softplus Function
 
