@@ -14,14 +14,6 @@ Propagation Functions: Mechanisms that help process and transfer data across lay
 
 Learning Rule: The method that adjusts weights and biases over time to improve accuracy.
 
-### Learning in neural networks follows a structured, three-stage process:
-
-Input Computation: Data is fed into the network.
-
-Output Generation: Based on the current parameters, the network generates an output.
-
-Iterative Refinement: The network refines its output by adjusting weights and biases, gradually improving its performance on diverse tasks.
-
 ### Layers in Neural Network Architecture
 
 Input Layer: This is where the network receives its input data. Each input neuron in the layer corresponds to a feature in the input data.
@@ -38,9 +30,11 @@ Output Layer: The final layer produces the output of the model. The format of th
 
 When data is input into the network, it passes through the network in the forward direction, from the input layer through the hidden layers to the output layer. This process is known as forward propagation. Here’s what happens during this phase:
 
-a) Linear Transformation: Each neuron in a layer receives inputs which are multiplied by the weights associated with the connections. These products are summed together and a bias is added to the sum. This can be represented mathematically as:
+a) Linear Transformation: Each neuron in a layer receives inputs which are multiplied by the weights associated with the connections (weighted sum). These products are summed together and a bias is added to the sum. 
 
 b) Activation: The result of the linear transformation (denoted as z) is then passed through an activation function. The activation function is crucial because it introduces non-linearity into the system, enabling the network to learn more complex patterns. Popular activation functions include ReLU, sigmoid and tanh.
+
+c) Propagation - The output of one layer becomes the input for the next layer and the process repeats until the final layer produces the network's prediction.
 
 2. Back Propagation 
 
@@ -48,11 +42,24 @@ After forward propagation, the network evaluates its performance using a loss fu
 
 a) Loss Calculation: The network calculates the loss which provides a measure of error in the predictions. The loss function could vary; common choices are mean squared error for regression tasks or cross-entropy loss for classification.
 b) Gradient Calculation: The network computes the gradients of the loss function with respect to each weight and bias in the network. This involves applying the chain rule of calculus to find out how much each part of the output error can be attributed to each weight and bias.
-c) Weight Update: Once the gradients are calculated, the weights and biases are updated using an optimization algorithm like stochastic gradient descent (SGD). The weights are adjusted in the opposite direction of the gradient to minimize the loss. The size of the step taken in each update is determined by the learning rate.
+c) Weight Update: Once the gradients are calculated, the weights and biases are updated using an optimization algorithms. The weights are adjusted in the opposite direction of the gradient to minimize the loss. The size of the step taken in each update is determined by the learning rate.
 
 3. Iteration
 
 This process of forward propagation, loss calculation, backpropagation and weight update is repeated for many iterations over the dataset. Over time, this iterative process reduces the loss and the network's predictions become more accurate.Through these steps, neural networks can adapt their parameters to better approximate the relationships in the data, thereby improving their performance on tasks such as classification, regression or any other predictive modeling.
+
+***
+> **_NOTE:_** Weights and Biases
+
+A bias is a constant added to a neuron's weighted input. It is not linked to any specific input but shifts the activation function to fit the data. Biases enhance the flexibility and learning capacity of neural networks. While weights control the influence of inputs, biases act as offsets that allow neurons to activate under a wider range of conditions.
+
+Purpose: Biases allow neurons to learn even when the weighted sum of inputs is insufficient, providing a mechanism to recognize patterns that don't pass through the origin.
+
+Functionality: If biases are not present, neurons can only activate when the input reaches a specific threshold. Activation becomes more flexible when biases are present.
+
+Training: Both weights, biases are updated during backpropagation to minimize prediction error. They help fine-tune neuron outputs, contributing to more accurate model performance.
+
+***
 
 ## Learning of a Neural Network
 
