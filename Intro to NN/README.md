@@ -5,21 +5,29 @@ Neural networks are machine learning models that mimic the complex functions of 
 ### These networks are built from several key components:
 
 Neurons: The basic units that receive inputs, each neuron is governed by a threshold and an activation function.
+
 Connections: Links between neurons that carry information, regulated by weights and biases.
+
 Weights and Biases: These parameters determine the strength and influence of connections.
+
 Propagation Functions: Mechanisms that help process and transfer data across layers of neurons.
+
 Learning Rule: The method that adjusts weights and biases over time to improve accuracy.
 
 ### Learning in neural networks follows a structured, three-stage process:
 
 Input Computation: Data is fed into the network.
+
 Output Generation: Based on the current parameters, the network generates an output.
+
 Iterative Refinement: The network refines its output by adjusting weights and biases, gradually improving its performance on diverse tasks.
 
 ### Layers in Neural Network Architecture
 
 Input Layer: This is where the network receives its input data. Each input neuron in the layer corresponds to a feature in the input data.
+
 Hidden Layers: These layers perform most of the computational heavy lifting. A neural network can have one or multiple hidden layers. Each layer consists of units (neurons) that transform the inputs into something that the output layer can use.
+
 Output Layer: The final layer produces the output of the model. The format of these outputs varies depending on the specific task like classification, regression.
 
 ![image](https://github.com/user-attachments/assets/5a25e7a6-6727-4c5b-a159-c2a9b05c7e8f)
