@@ -37,9 +37,3 @@ Use Cases: Stabilizing and speeding up training
 
 ![image](https://github.com/user-attachments/assets/e530fe72-b1aa-4935-8612-9019a8d5a102)
 
-## Activation Functions in NN
-
-While building a neural network, one key decision is selecting the Activation Function for both the hidden layer and the output layer. It is a mathematical function applied to the output of a neuron. It introduces non-linearity into the model, allowing the network to learn and represent complex patterns in the data. Without this non-linearity feature a neural network would behave like a linear regression model no matter how many layers it has.
-
-### Types of Activation functions in Deep Learning
-
