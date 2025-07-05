@@ -21,8 +21,6 @@ Sigmoid is a mathematical function that maps any real-valued number into a value
 ​
 **Properties of the Sigmoid Function**
 
-The sigmoid function has several key properties that make it a popular choice in machine learning and neural networks:
-
 Domain: The domain of the sigmoid function is all real numbers. This means that you can input any real number into the sigmoid function, and it will produce a valid output.
 
 Asymptotes: As x approaches positive infinity, σ(x) approaches 1. Conversely, as x approaches negative infinity, σ(x) approaches 0. This property ensures that the function never actually reaches 0 or 1, but gets arbitrarily close.
@@ -43,7 +41,6 @@ During the backpropagation, the model calculates and updates weights and biases 
 One key issue with using the sigmoid function is the vanishing gradient problem. When updating weights and biases using gradient descent, if the gradients are too small, the updates to weights and biases become insignificant, slowing down or even stopping learning.
 
 ![image](https://github.com/user-attachments/assets/07727582-8507-4636-aab7-502c740c8cdc)
-
 
 ### 2. tanh Function
 
@@ -82,3 +79,4 @@ You are working with data where negative values are significant and should be re
 ### 1. Softmax Funciton
 
 ### 2. Softplus Function
+
