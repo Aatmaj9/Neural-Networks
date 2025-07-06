@@ -19,9 +19,9 @@ Variants of Gradient Descent:
 
 Stochastic optimization techniques introduce randomness to the search process, which can be advantageous for tackling complex, non-convex optimization problems where traditional methods might struggle.
 
-Simulated Annealing: Inspired by the annealing process in metallurgy, this technique starts with a high temperature (high randomness) that allows exploration of the search space widely. Over time, the temperature decreases (randomness decreases), mimicking the cooling of metal, which helps the algorithm converge towards better solutions while avoiding local minima.
+**1. Simulated Annealing:** Inspired by the annealing process in metallurgy, this technique starts with a high temperature (high randomness) that allows exploration of the search space widely. Over time, the temperature decreases (randomness decreases), mimicking the cooling of metal, which helps the algorithm converge towards better solutions while avoiding local minima.
 
-Random Search: This simple method randomly chooses points in the search space then evaluates them. Though it may appear naive, random search is actually quite effective particularly for optimization landscapes that are high-dimensional or poorly understood. The ease of implementation coupled with its ability to act as a benchmark for more complex algorithms makes this approach attractive. In addition, random search may also form part of wider strategies where other optimization methods are used.
+**2. Random Search:** This simple method randomly chooses points in the search space then evaluates them. Though it may appear naive, random search is actually quite effective particularly for optimization landscapes that are high-dimensional or poorly understood. The ease of implementation coupled with its ability to act as a benchmark for more complex algorithms makes this approach attractive. In addition, random search may also form part of wider strategies where other optimization methods are used.
 
 When using stochastic optimization algorithms, it is essential to consider the following practical aspects:
 
