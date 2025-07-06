@@ -1,5 +1,7 @@
 # Types of Optimization Algorithms in Machine Learning
 
+> **Note:** We will just look at the basics of how various algorithms work. In depth information of each algorithm is given seperately which you can acces via respective hyperlinks.
+
 ## 1. First-Order algorithms
 
 ### Gradient Descent
