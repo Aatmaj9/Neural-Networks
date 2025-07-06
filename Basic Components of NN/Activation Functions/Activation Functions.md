@@ -111,7 +111,7 @@ f(x)=max(0,x)
 
 **Variants Of ReLU**
 
-1. Leaky ReLU
+**1. Leaky ReLU**
 
 Leaky ReLU introduces a small slope for negative values instead of outputting zero, which helps keep neurons from "dying."
 
@@ -121,7 +121,7 @@ where α is a small constant (often set to 0.01).
 
 ![image](https://github.com/user-attachments/assets/17cd329d-5993-4c1f-b0cc-d9647eba52cc)
 
-2. Parametric ReLU
+**2. Parametric ReLU**
 
 Parametric ReLU (PReLU) is an extension of Leaky ReLU, where the slope of the negative part is learned during training. The formula is as follows:
 
@@ -146,10 +146,95 @@ Softmax gained prominence with the rise of deep learning, particularly in models
 
 ![image](https://github.com/user-attachments/assets/afd02543-0a47-4aa8-83d3-753b0f44beb2)
 
-zi is the logit (the output of the previous layer in the network) for the i^{th}class.
+zi is the logit (the output of the previous layer in the network) for the i th class.
 K is the number of classes.
 
 **Working of softmax**
 
+**Step 1: Raw Logits (Pre-Softmax Outputs)**
+Consider the output from the last layer of the neural network, which consists of logits. These logits are unbounded real numbers and represent the raw predictions for each class.
+
+Let’s assume we are working on a classification task with K classes. The neural network provides an output vector z = {z1, z2, ......... zK} where each z(i) is the logit corresponding to the i th class.
+
+**Step 2: Applying the Softmax Function**
+The Softmax function transforms these logits into probabilities. The formula for Softmax for each class i is:
+
+![image](https://github.com/user-attachments/assets/36788cf1-d6ae-4f85-a1ad-49974b6a3d5b)
+
+**Step 3: Exponential Scaling**
+The exponential function e^(z(i)) applied to each logit zi plays a crucial role. It emphasizes the difference between logits: even a slight increase in a logit value leads to a larger probability, while small logits result in near-zero probabilities.
+
+**Step 4: Normalization**
+The sum of the exponentials is used to normalize the values into probabilities. The normalization step ensures that all the probabilities add up to 1.
+
+**Step 5: Interpretation of the Output**
+The result of applying the Softmax function to the logits is a probability distribution. Each element represents the probability that the input data belongs to a particular class.
+
 ### 2. Softplus Function
 
+Softplus function is a smooth approximation of the ReLU function, defined mathematically as:
+
+![image](https://github.com/user-attachments/assets/066633f0-7b57-4ebb-8e2c-dc5c25fc263b)
+
+![image](https://github.com/user-attachments/assets/8c4743e2-d8f6-4d33-afbc-d6e7322ce656)
+
+**Characterisitics**
+
+1. The output is always positive.
+
+2. The function smoothly increases and is always differentiable, unlike ReLU, which has a sharp corner at zero.
+
+3. For negative inputs, the function approaches zero, but unlike ReLU, it never exactly reaches zero, avoiding the problem of "dying neurons."
+
+**Mathematical properties**
+
+The Softplus function has some important mathematical properties that are helpful for neural networks:
+
+1. Derivative of Softplus: The derivative of the Softplus function is the sigmoid function. This property makes Softplus useful in situations where we want to control the smoothness of the gradient, as it has a continuous and smooth derivative.
+
+![image](https://github.com/user-attachments/assets/8375c806-28bd-4aa2-ad44-6ea5a8b02669)
+
+![image](https://github.com/user-attachments/assets/7742345d-fd30-4b02-9aed-b31e6ea64b68)
+
+2. Range: The Softplus function outputs values from 0 to infinity. This ensures that it can be used in situations where positive outputs are desired, such as in regression tasks where the outputs should be non-negative.
+
+3. Behavior at Extremes:
+
+As x→∞, Softplus behaves like a linear function: 
+
+lim  x→ ∞ ln(1+e^(x))≈ x
+
+As x → −∞, Softplus approaches zero, but never actually reaches zero. This helps to avoid the problem of dead neurons, which is common in ReLU when the input is negative:
+
+lim x → −∞ ln(1+e^(x))≈0
+
+**Advantages of Softplus**
+
+1. Smooth Non-linearity: The smoothness of the Softplus function makes it a good choice for models where smooth and continuous transitions are important, such as in certain types of regression and classification problems.
+
+2. Solves the Dying Neuron Problem: Softplus avoids the "dying neuron" problem of ReLU by allowing negative inputs to produce very small but non-zero outputs, ensuring that the neurons remain active during training.
+
+3. Differentiable Everywhere: Unlike ReLU, which has a sharp corner at zero, Softplus is differentiable everywhere. This makes it more suitable for optimization algorithms that rely on gradients, as the gradients will be smooth and continuous.
+
+4. Better Handling of Negative Inputs: Softplus handles negative inputs more gracefully than ReLU. While ReLU simply outputs zero for negative inputs, Softplus produces a small positive output, making it more appropriate for networks that need to work with both positive and negative data.
+
+**Disadvantages of Softplus**
+
+1. Computationally More Expensive: While Softplus is smooth and differentiable, it is computationally more expensive than ReLU because it requires computing the logarithm and exponential functions. This can slow down training for large networks, especially on resource-constrained systems.
+
+2. Not as Popular as ReLU: While Softplus offers advantages, it is not as widely used as ReLU. ReLU has become the default choice for many architectures because it is computationally simpler and performs well in practice.
+
+3. Slower Convergence: The smoother nature of Softplus can sometimes lead to slower convergence during training compared to ReLU, which may be a trade-off in certain applications.
+When to Use Softplus?
+
+Softplus is useful when:
+
+1. You need a smooth and continuous activation function.
+
+2. You want to avoid the dying neuron problem that occurs with ReLU.
+
+3. The network deals with both positive and negative inputs, and you want the output to remain non-negative.
+
+4. You prefer a differentiable function throughout the network for smoother gradient-based optimization.
+
+However, for many deep learning models, ReLU or Leaky ReLU might still be preferred due to their simpler computation and better convergence in certain contexts.
