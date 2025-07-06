@@ -245,9 +245,8 @@ lim x → −∞ ln(1+e^(x))≈0
 2. Not as Popular as ReLU: While Softplus offers advantages, it is not as widely used as ReLU. ReLU has become the default choice for many architectures because it is computationally simpler and performs well in practice.
 
 3. Slower Convergence: The smoother nature of Softplus can sometimes lead to slower convergence during training compared to ReLU, which may be a trade-off in certain applications.
-When to Use Softplus?
 
-Softplus is useful when:
+**Softplus is useful when:**
 
 1. You need a smooth and continuous activation function.
 
