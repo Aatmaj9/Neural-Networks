@@ -63,7 +63,7 @@ Tuning of model parameters that does not directly adapt to datasets is termed as
 
 **2. Random Search:** As for the Random Search approach, it can be noted that it is more rational than the Grid Search since the hyperparameters are chosen randomly from a given distribution. This method does not provide the optimal hyperparameters but often provides sets of parameters that are reasonably optimal in a much shorter amount of time to that taken by grid search. Random Search is found useful and more efficient when dealing with large and high-dimensional parameter space since it covers more fields of hyperparameters.
 
-## Second-order Algortihms
+## 2. Second-order Algortihms
 
 ### Newton's method and Quasi-Newton Methods
 
