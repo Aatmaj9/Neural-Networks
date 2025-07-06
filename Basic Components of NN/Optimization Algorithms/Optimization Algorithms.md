@@ -15,6 +15,8 @@ Variants of Gradient Descent:
 
 3. **Momentum:** Momentum improves SGD by adding the information of the preceding steps of the algorithm to the next step. By adding a portion of the current update vector to the previous update, it enables the algorithm to penetrate through flat areas and noisy gradients to help minimize the time to train and find convergence.
 
+***
+
 ### Stochastic Optimization Techniques
 
 Stochastic optimization techniques introduce randomness to the search process, which can be advantageous for tackling complex, non-convex optimization problems where traditional methods might struggle.
@@ -29,6 +31,8 @@ When using stochastic optimization algorithms, it is essential to consider the f
 
 2. Problem Structure: The choice of stochastic optimization algorithm depends on the structure of the problem. For example, simulated annealing is suitable for problems with multiple local optima, while random search is effective for high-dimensional optimization landscapes
 
+***
+
 ### Evolutionary Algorithms
 
 **1. Genetic ALgorithms**
@@ -39,9 +43,13 @@ These algorithms use crossover and mutation operators to evolve the population. 
 
 Another type of evolutionary algorithm is Differential Evolution that seeks an optimum of a problem using improvements for a candidate solution. It works by bringing forth new candidate solutions from the population through an operation known as vector addition. DE is generally performed by mutation and crossover operations to create new vectors and replace low fitting individuals in the population.
 
+***
+
 ### Metaheuristic Optimization
 
 Metaheuristic optimization algorithms are used to supply strategies at guiding lower level heuristic techniques that are used in the optimization of difficult search spaces. This is a great opportunity since from the simple survey of the literature, one gets the feeling that algorithms of this form can be particularly applied where the main optimization approaches have failed due to the large and complex or non-linear and/or multi-modal objectives.
+
+***
 
 ### Swarm Intelligence Algorithms
 
@@ -57,6 +65,8 @@ Particle Swarm Optimization (PSO), is an optimization technique where a populati
 
 Ant Colony Optimization is inspired by the foraging behavior of ants. Ants find the shortest path between their colony and food sources by laying down pheromones, which guide other ants to the path.
 
+***
+
 ### Hyperparameter Optimization
 
 Tuning of model parameters that does not directly adapt to datasets is termed as hyper parameter tuning and is a vital process in machine learning. These parameters referred to as the hyperparameters may influence the performance of a certain model. Tuning them is crucial in order to get the best out of the model, as it will theoretically work at its best.
@@ -64,6 +74,8 @@ Tuning of model parameters that does not directly adapt to datasets is termed as
 **1. Grid Search:** Similarly to other types of algorithms, Grid Search is designed to optimize hyperparameters. It entails identifying a specific set of hyperparameter values and train the model and test it for each and every one of these values. However, it is a time-consuming process, both in terms of computation time and processing time for large datasets and complex models despite the fact that Grid Search is computationally expensive, though promising, it ensures that the model finds the best values of hyperparameters given in the grid. It is commonly applied in the case when computational resources are available in large quantities and the parameter space is limited compared to the population space.
 
 **2. Random Search:** As for the Random Search approach, it can be noted that it is more rational than the Grid Search since the hyperparameters are chosen randomly from a given distribution. This method does not provide the optimal hyperparameters but often provides sets of parameters that are reasonably optimal in a much shorter amount of time to that taken by grid search. Random Search is found useful and more efficient when dealing with large and high-dimensional parameter space since it covers more fields of hyperparameters.
+
+***
 
 ## 2. Second-order Algortihms
 
@@ -83,11 +95,15 @@ Quasi-Newton’s Method has alternatives such as the BFGS (Broyden-Fletcher-Gold
 
 **L-BFGS:** L-BFGS is a memory efficient version of BFGS and suitable for solving problems in large scale. It maintains only a few iterations’ worth of updates, which results in greater scalability without sacrificing the properties of BFGS convergence.
 
+***
+
 ### Constrained Optimization
 
 **Lagrange Multipliers:** Additional variables (called Lagrange multipliers) are introduced in this method so that a constrained problem can be turned into an unconstrained one. It is designed for problems having equality constraints which allows finding out the points where both the objective function and constraints are satisfied optimally.
 
 **KKT Conditions:** These conditions generalize those of Lagrange multipliers to encompass both equality and inequality constraints. They are used to give necessary conditions of optimality for a solution incorporating primal feasibility, dual feasibility as well as complementary slackness thus extending the range of problems under consideration in constrained optimization.
+
+***
 
 ### Bayesian Optimization
 
