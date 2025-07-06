@@ -190,6 +190,8 @@ The result of applying the Softmax function to the logits is a probability distr
 
 5. Not suited for multi-label tasks, where an instance can belong to multiple classes.
 
+[Softmax Implementation](Neural-Netwroks/Basic Components of NN/Activation Functions/Softmax/Softmax.md)
+
 ### 2. Softplus Function
 
 Softplus function is a smooth approximation of the ReLU function, defined mathematically as:
