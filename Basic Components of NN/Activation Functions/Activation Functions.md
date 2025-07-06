@@ -170,6 +170,26 @@ The sum of the exponentials is used to normalize the values into probabilities. 
 **Step 5: Interpretation of the Output**
 The result of applying the Softmax function to the logits is a probability distribution. Each element represents the probability that the input data belongs to a particular class.
 
+**Advantages of the Softmax Function**
+
+1. Probability Distribution: Softmax produces output values that can be interpreted as probabilities that provides a clear way to measure the confidence of a model in its predictions.
+
+2. Differentiability: Softmax function is differentiable, hence, we can integrate into the backpropagation algorithm used to train neural networks. This ensures that model parameters can be updated effectively using gradient descent.
+
+3. Normalized Output: Softmax ensures that the sum of the output probabilities equals 1. This allows the results to be interpreted in a probabilistic manner, where the class with the highest probability is the model's prediction.
+
+**Drawbacks of the Softmax Function**
+
+1. Large disparities in logits can dominate the output, making Softmax sensitive to outliers and noisy data.
+
+2. Small probabilities can cause very small gradients during backpropagation, slowing down learning.
+
+3. Softmax may assign high probabilities to incorrect classes, leading to overly confident predictions.
+
+4. Requires exponentiation and normalization, making it computationally expensive for large datasets or many classes.
+
+5. Not suited for multi-label tasks, where an instance can belong to multiple classes.
+
 ### 2. Softplus Function
 
 Softplus function is a smooth approximation of the ReLU function, defined mathematically as:
