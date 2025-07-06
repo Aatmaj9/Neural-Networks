@@ -34,18 +34,19 @@ Classification loss functions are used to evaluate how well a classification mod
 ### 1. Binary Cross-Entropy Loss (Log Loss)
 Binary Cross-Entropy Loss is also known as Log Loss and is used for binary classification problems. It measures the performance of a classification model whose output is a probability value between 0 and 1.
 
-![image](https://github.com/user-attachments/assets/a40c3283-847f-4d36-b42c-32861cc84c5d)
+![image](https://github.com/user-attachments/assets/615a939e-a374-4767-8045-21c8396c7ba6)
 
 ### 2. Categorical Cross-Entropy Loss
 Categorical Cross-Entropy Loss is used for multiclass classification problems. It measures the performance of a classification model whose output is a probability distribution over multiple classes.
 
-![image](https://github.com/user-attachments/assets/00a04f02-f65d-4e57-a10f-f884f7244157)
+![image](https://github.com/user-attachments/assets/1883bd7e-07c9-4455-8ab6-11c72601f941)
 
 ### 3. Sparse Categorical Cross-Entropy Loss
 Sparse Categorical Cross-Entropy Loss is similar to Categorical Cross-Entropy Loss but is used when the target labels are integers instead of one-hot encoded vectors. It is efficient for large datasets with many classes.
 
 ![image](https://github.com/user-attachments/assets/867bf37a-d0c5-4d0e-8705-4f80abd80b3f)
 
+where y(i) is the integer representing the correct class for data point i.
 ### 4. Kullback-Leibler Divergence Loss (KL Divergence)
 KL Divergence measures how one probability distribution diverges from a second expected probability distribution. It is often used in probabilistic models. It is sensitive to small differences in probability distributions.
 
@@ -54,7 +55,8 @@ KL Divergence measures how one probability distribution diverges from a second e
 ### 5. Hinge Loss
 Hinge Loss is used for training classifiers especially for support vector machines (SVMs). It is suitable for binary classification tasks as it is not differentiable at zero.
 
-![image](https://github.com/user-attachments/assets/ed1e9d08-d6ed-431f-b204-6abe49021d4c)
+![image](https://github.com/user-attachments/assets/02c68ea4-e63e-4f27-b685-88356dccaf8b)
+
 
 ## 3. Ranking Loss Functions
 Ranking loss functions are used to evaluate models that predict the relative order of items. These are commonly used in tasks such as recommendation systems and information retrieval.
@@ -62,17 +64,18 @@ Ranking loss functions are used to evaluate models that predict the relative ord
 ### 1. Contrastive Loss
 Contrastive Loss is used to learn embeddings such that similar items are closer in the embedding space while dissimilar items are farther apart. It is often used in Siamese networks.
 
-![image](https://github.com/user-attachments/assets/1c1a10e8-b4e3-4078-9a7f-535488ed5967)
+![image](https://github.com/user-attachments/assets/c36958d0-5e2c-4824-b9d9-04106bc099c4)
+
 
 ### 2. Triplet Loss
 Triplet Loss is used to learn embeddings by comparing the relative distances between triplets: anchor, positive example and negative example.
 
-![image](https://github.com/user-attachments/assets/9f3f0214-b6d9-4b86-837c-2c62aeb6da51)
+![image](https://github.com/user-attachments/assets/be8de33d-6e62-4b04-b06f-a5e37969743e)
 
 ### 3. Margin Ranking Loss
 Margin Ranking Loss measures the relative distances between pairs of items and ensures that the correct ordering is maintained with a specified margin.
 
-![image](https://github.com/user-attachments/assets/b1aa18b6-78d2-4fdc-83a2-c68e606ad8ea)
+![image](https://github.com/user-attachments/assets/b7be6255-9850-4a28-81a3-f7a3db5199c2)
 
 ## 4. Image and Reconstruction Loss Functions
 These loss functions are used to evaluate models that generate or reconstruct images ensuring that the output is as close as possible to the target images.
@@ -80,7 +83,7 @@ These loss functions are used to evaluate models that generate or reconstruct im
 ### 1. Pixel-wise Cross-Entropy Loss
 Pixel-wise Cross-Entropy Loss is used for image segmentation tasks where each pixel is classified independently.
 
-![image](https://github.com/user-attachments/assets/7bb3ce85-c878-41bc-8ce1-addb4dc0c257)
+![image](https://github.com/user-attachments/assets/1fbb44fc-fd5d-4728-bf8c-9c57a1640e8f)
 
 ### 2. Dice Loss
 Dice Loss is used for image segmentation tasks and is particularly effective for imbalanced datasets. It measures the overlap between the predicted segmentation and the ground truth.
@@ -95,7 +98,8 @@ Jaccard Loss is also known as IoU Loss that measures the intersection over union
 ### 4. Perceptual Loss
 Perceptual Loss measures the difference between high-level features of images rather than pixel-wise differences. It is often used in image generation tasks.
 
-![image](https://github.com/user-attachments/assets/4b4fd038-10a8-4730-989b-fce574130b7c)
+![image](https://github.com/user-attachments/assets/160aa723-a125-4636-be85-ef04f4d00b8a)
+
 
 ### 5. Total Variation Loss
 Total Variation Loss encourages spatial smoothness in images by penalizing differences between adjacent pixels.
@@ -127,10 +131,14 @@ CTC Loss is used for sequence prediction tasks where the alignment between input
 
 ![image](https://github.com/user-attachments/assets/73b0e92f-f254-4176-b372-78e3dac89a60)
 
+where p(y∣x) is the probability of the correct output sequence given the input sequence.
+
 ### 2. Poisson Loss
 Poisson Loss is used for count data modeling the distribution of the predicted values as a Poisson distribution.
 
 ![image](https://github.com/user-attachments/assets/e148b675-96a5-4944-bbe6-f5a0e36a677c)
+
+y(hat)(i) is the predicted count and y(i) is the actual count.
 
 ### 3. Cosine Proximity Loss
 Cosine Proximity Loss measures the cosine similarity between the predicted and target vectors encouraging them to point in the same direction.
