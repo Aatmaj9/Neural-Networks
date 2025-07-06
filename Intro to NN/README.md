@@ -36,7 +36,7 @@ b) Activation: The result of the linear transformation (denoted as z) is then pa
 
 c) Propagation - The output of one layer becomes the input for the next layer and the process repeats until the final layer produces the network's prediction.
 
-**2. Back Propagation **
+**2. Back Propagation**
 
 After forward propagation, the network evaluates its performance using a loss function which measures the difference between the actual output and the predicted output. The goal of training is to minimize this loss. This is where backpropagation comes into play:
 
